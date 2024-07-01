@@ -1,6 +1,6 @@
-﻿namespace RockPaperScissorsGame
+﻿namespace RockPaperScissors
 {
-    internal class RockPaperScissorsGame
+    internal class Program
     {
         static void Main(string[] args)
         {
