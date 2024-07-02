@@ -6,6 +6,7 @@
         {
             var playerScore = 0;
             var computerScore = 0;
+            var gamesPlayed = 0;
 
             while (true)
             {
@@ -77,9 +78,11 @@
                     Console.WriteLine($"Player {playerScore} : {computerScore} Computer");
                 }
 
+                gamesPlayed++;
+
                 //Game exit/continue option
                 Console.WriteLine("Do you want to continue? Y/N");
-                bool isFinished = false;
+                
                 while (true)
                 {
                     input = Console.ReadLine(); // yes or no
@@ -90,8 +93,8 @@
                     }
                     else if (input == "No" || input == "no" || input == "N" || input == "n")
                     {
-                        isFinished = true;
-                        break;
+                        Console.WriteLine($"Final result: Player {playerScore} : {computerScore} computer after {gamesPlayed} games. ");
+                        return;
                     }
                     else
                     {
@@ -100,13 +103,9 @@
                     }
 
                 }
-                if (isFinished) 
-                {
-                    break;
-                }
             }
 
-            Console.WriteLine($"Final result: Player {playerScore} : {computerScore} computer ");
+            
         }
     }
 }
