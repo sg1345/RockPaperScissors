@@ -14,20 +14,21 @@
                 Console.Write("Choose Rock(r), Paper(p) or Scissors(s): ");
                 var input = Console.ReadLine(); //Rock == r; Paper == p; Scissors == s; 
 
-                if (input == "Rock" || input == "rock" ||
-                    input == "r"    || input == "R"    )
+                var playerMove = input;
+                if (playerMove == "Rock" || playerMove == "rock" ||
+                    playerMove == "r"    || playerMove == "R"    )
                 {
-                    input = "ROCK";
+                    playerMove = "ROCK";
                 }
-                else if (input == "Paper" || input == "paper" ||
-                         input == "P"     || input == "p")
+                else if (playerMove == "Paper" || playerMove == "paper" ||
+                         playerMove == "P"     || playerMove == "p")
                 {
-                    input = "PAPER";
+                    playerMove = "PAPER";
                 }
-                else if (input == "Scissors" || input == "scissors" ||
-                         input == "S"        || input == "s")
+                else if (playerMove == "Scissors" || playerMove == "scissors" ||
+                         playerMove == "S"        || playerMove == "s")
                 {
-                    input = "SCISSORS";
+                    playerMove = "SCISSORS";
                 }
                 else
                 {
@@ -56,17 +57,17 @@
                 //Game time! Result comparison
                 Console.WriteLine($"GAME TIME:   (Computer)  {computerMove} vs {input} (Player)");
 
-                if (computerMove == "ROCK"     && input == "PAPER"    ||
-                    computerMove == "PAPER"    && input == "SCISSORS" ||
-                    computerMove == "SCISSORS" && input == "ROCK")
+                if (computerMove == "ROCK"     && playerMove == "PAPER"    ||
+                    computerMove == "PAPER"    && playerMove == "SCISSORS" ||
+                    computerMove == "SCISSORS" && playerMove == "ROCK")
                 {
                     playerScore++;
                     Console.Write("You win!             ");
                     Console.WriteLine($"Player {playerScore} : {computerScore} Computer");
                 }
-                else if (computerMove == "ROCK"     && input == "SCISSORS" ||
-                         computerMove == "PAPER"    && input == "ROCK" ||
-                         computerMove == "SCISSORS" && input == "PAPER")
+                else if (computerMove == "ROCK"     && playerMove == "SCISSORS" ||
+                         computerMove == "PAPER"    && playerMove == "ROCK" ||
+                         computerMove == "SCISSORS" && playerMove == "PAPER")
                 {
                     computerScore++;
                     Console.Write("You lose!            ");
@@ -98,7 +99,7 @@
                     }
                     else
                     {
-                        Console.WriteLine("Invalid input!");
+                        Console.WriteLine("Invalid input! Please enter Y or N");
                         continue;
                     }
 
